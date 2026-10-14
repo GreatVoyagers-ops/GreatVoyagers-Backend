@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: greatvoyagers-api
+    name: greatvoyagers-backend
     runtime: node
     plan: free
     region: singapore
