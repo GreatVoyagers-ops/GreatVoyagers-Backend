@@ -12,6 +12,9 @@ const config = {
     .filter(Boolean),
   trustProxy: Number(env.TRUST_PROXY ?? 1),
   deployHookUrl: env.VERCEL_DEPLOY_HOOK_URL || "",
+  // Render sets RENDER_EXTERNAL_URL automatically; KEEP_ALIVE_URL=off disables the pinger.
+  keepAliveUrl: env.KEEP_ALIVE_URL === "off" ? "" : env.KEEP_ALIVE_URL || env.RENDER_EXTERNAL_URL || "",
+  keepAliveMinutes: Math.min(Math.max(Number(env.KEEP_ALIVE_MINUTES) || 10, 1), 14),
   cookieName: "gv_admin",
   sessionDays: 7,
 };
