@@ -17,8 +17,6 @@ services:
         value: "2"
       - key: CLIENT_ORIGIN
         value: https://www.greatvoyagers.com,https://greatvoyagers.com
-      - key: KEEP_ALIVE_MINUTES
-        value: "10"
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
