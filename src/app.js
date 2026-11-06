@@ -14,6 +14,7 @@ import vendorRoutes from "./routes/crm/vendors.js";
 import quoteRoutes from "./routes/crm/quotes.js";
 import settingsRoutes from "./routes/crm/settings.js";
 import publicQuoteRoutes from "./routes/publicQuotes.js";
+import { serveStaticSite } from "./staticSite.js";
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
 
 export function createApp() {
@@ -42,6 +43,7 @@ export function createApp() {
   app.use("/api/admin/quotes", quoteRoutes);
   app.use("/api/admin/settings", settingsRoutes);
 
+  serveStaticSite(app);
   app.use(notFound);
   app.use(errorHandler);
   return app;
